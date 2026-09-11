@@ -1,0 +1,16 @@
+{
+    "name": "Ankit Khanal — Web Developer & Freelancer",
+    "short_name": "Ankit K.",
+    "description": "Portfolio of Ankit Khanal, Web Developer & Freelancer based in Nepal.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#080808",
+    "theme_color": "#080808",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
