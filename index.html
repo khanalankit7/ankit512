@@ -10,10 +10,6 @@
         name="description"
         content="Ankit Khanal is a Web Developer & Freelancer based in Nepal, building modern, responsive and user-focused websites — business sites, e-commerce, landing pages and personal brands."
     >
-    <meta
-        name="keywords"
-        content="Ankit Khanal, web developer Nepal, freelancer Nepal, website developer Nepal, Ankit Khanal web developer, hire web developer, landing page developer, e-commerce developer Nepal"
-    >
     <meta name="author" content="Ankit Khanal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ankitkhanal7.com.np/">
@@ -22,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#080808">
 
@@ -49,6 +45,7 @@
         content="Modern, functional and user-focused websites — built by Ankit Khanal, a Web Developer & Freelancer based in Nepal."
     >
     <meta name="twitter:image" content="https://ankitkhanal7.com.np/og-image.jpg">
+    <meta name="twitter:image:alt" content="Ankit Khanal — Web Developer & Freelancer from Nepal">
 
     <!-- Geo (local relevance for Nepal searches) -->
     <meta name="geo.region" content="NP">
@@ -80,6 +77,13 @@
                     "MySQL",
                     "Node.js",
                     "Tailwind CSS",
+                    "React",
+                    "Bootstrap",
+                    "jQuery",
+                    "MongoDB",
+                    "Firebase",
+                    "WordPress",
+                    "Web Hosting",
                     "Web Development"
                 ],
                 "sameAs": [
@@ -114,8 +118,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!--
+        Fonts are requested from here rather than with an @import inside
+        style.css. An @import is only discovered once the stylesheet has been
+        downloaded and parsed, which turns the font request into a serial
+        round trip sitting on the critical path.
+    -->
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    >
+
     <!-- Performance: start loading the hero image before CSS finishes -->
     <link rel="preload" as="image" href="profile.jpg" fetchpriority="high">
+
+    <!--
+        Progressive enhancement. The scroll-reveal styles are scoped to .js in
+        style.css so the content stays visible without JavaScript, and this
+        timer removes the flag again if script.js never initialises - a failed
+        script can then never leave the page blank.
+    -->
+    <script>
+        document.documentElement.classList.add("js");
+
+        window.setTimeout(function () {
+            if (!document.documentElement.hasAttribute("data-reveal-ready")) {
+                document.documentElement.classList.remove("js");
+            }
+        }, 2000);
+    </script>
 
     <link rel="stylesheet" href="style.css">
 </head><body>
@@ -137,7 +168,7 @@
 
         <a href="#home" class="logo profile-logo" aria-label="Ankit Khanal — Home">
     <span class="logo-photo">
-        <img src="profile.jpg" alt="Ankit Khanal logo" width="40" height="40" loading="lazy">
+        <img src="profile-avatar.jpg" alt="Ankit Khanal" width="96" height="96" loading="eager" decoding="async">
     </span>
 
     <span class="logo-text">
@@ -236,8 +267,9 @@
                         <img
                             src="profile.jpg"
                             alt="Ankit Khanal — Web Developer & Freelancer from Nepal"
-                            width="800"
-                            height="800"
+                            width="1023"
+                            height="1537"
+                            decoding="async"
                         >
 
                     </div>
@@ -264,8 +296,8 @@
         </section>
 
 
-        <!-- MARQUEE -->
-        <div class="marquee">
+        <!-- MARQUEE (decorative: hidden from assistive tech) -->
+        <div class="marquee" aria-hidden="true">
 
             <div class="marquee-track">
 
@@ -448,6 +480,111 @@
 
                     <div class="skill-description">
                         Designing modern and responsive interfaces.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">06</span>
+
+                    <div class="skill-name">
+                        React
+                    </div>
+
+                    <div class="skill-description">
+                        Building component-based, interactive interfaces.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">07</span>
+
+                    <div class="skill-name">
+                        Bootstrap
+                    </div>
+
+                    <div class="skill-description">
+                        Creating responsive layouts with a ready-made grid.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">08</span>
+
+                    <div class="skill-name">
+                        jQuery
+                    </div>
+
+                    <div class="skill-description">
+                        Adding interactivity to existing and PHP-driven pages.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">09</span>
+
+                    <div class="skill-name">
+                        MongoDB
+                    </div>
+
+                    <div class="skill-description">
+                        Working with document-based data in Node.js apps.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">10</span>
+
+                    <div class="skill-name">
+                        Firebase
+                    </div>
+
+                    <div class="skill-description">
+                        Using managed authentication, hosting and realtime data.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">11</span>
+
+                    <div class="skill-name">
+                        WordPress
+                    </div>
+
+                    <div class="skill-description">
+                        Building and customising content-managed sites.
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item reveal">
+
+                    <span class="skill-number">12</span>
+
+                    <div class="skill-name">
+                        cPanel <span>/</span> Hosting &amp; DNS
+                    </div>
+
+                    <div class="skill-description">
+                        Deploying sites and managing domains, email and DNS.
                     </div>
 
                 </div>
