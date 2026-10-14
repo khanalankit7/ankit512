@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
-
-
 /* =========================================================
    RESET & BASE
+
+   Manrope and DM Mono are requested with a <link> in index.html
+   rather than with an @import here. An @import is only discovered
+   once this stylesheet has downloaded and been parsed, which
+   serialises the font request behind it on the critical path.
 ========================================================= */
 
 * {
@@ -281,6 +283,20 @@ button {
     transition: 0.3s ease;
 }
 
+/*
+    The two bars meet in the middle and cross over while the menu is
+    open, so the toggle shows its own state. Driven off aria-expanded
+    so the visual state can never drift out of sync with the markup.
+*/
+
+.menu-button[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.menu-button[aria-expanded="true"] span:nth-child(2) {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
 
 /* =========================================================
    HERO
@@ -348,7 +364,7 @@ button {
     font-family: "DM Mono", monospace;
     font-size: 0.68rem;
     letter-spacing: 0.18em;
-    color: #777;
+    color: #9a9a9a;
 }
 
 .hero-title {
@@ -602,7 +618,7 @@ button {
 }
 
 .floating-card span {
-    color: #555;
+    color: #8a8a8a;
 }
 
 .card-top {
@@ -626,7 +642,7 @@ button {
     font-family: "DM Mono", monospace;
     font-size: 0.58rem;
 
-    color: #555;
+    color: #8a8a8a;
 
     letter-spacing: 0.08em;
 }
@@ -663,13 +679,13 @@ button {
 
     font-size: 0.65rem;
 
-    color: #666;
+    color: #8a8a8a;
 
     letter-spacing: 0.12em;
 }
 
 .marquee i {
-    color: #555;
+    color: #8a8a8a;
     font-style: normal;
 }
 
@@ -709,7 +725,7 @@ button {
 .section-number {
     font-family: "DM Mono", monospace;
 
-    color: #444;
+    color: #8a8a8a;
 
     font-size: 0.75rem;
 }
@@ -757,7 +773,7 @@ button {
 }
 
 .about-text {
-    color: #777;
+    color: #9a9a9a;
 
     line-height: 1.9;
 
@@ -787,7 +803,7 @@ button {
 
 .about-facts span {
     font-family: "DM Mono", monospace;
-    color: #444;
+    color: #8a8a8a;
 }
 
 .about-facts strong {
@@ -830,7 +846,7 @@ button {
 .skill-number {
     font-family: "DM Mono", monospace;
 
-    color: #444;
+    color: #8a8a8a;
 
     font-size: 0.7rem;
 }
@@ -842,11 +858,11 @@ button {
 }
 
 .skill-name span {
-    color: #444;
+    color: #8a8a8a;
 }
 
 .skill-description {
-    color: #666;
+    color: #9a9a9a;
 
     font-size: 0.78rem;
 
@@ -895,7 +911,7 @@ button {
 
     font-size: 0.7rem;
 
-    color: #444;
+    color: #8a8a8a;
 
     margin-bottom: auto;
 }
@@ -909,7 +925,7 @@ button {
 }
 
 .confidence-card p {
-    color: #777;
+    color: #9a9a9a;
 
     font-size: 0.82rem;
 
@@ -986,7 +1002,7 @@ button {
 .service span {
     font-family: "DM Mono", monospace;
 
-    color: #444;
+    color: #8a8a8a;
 
     font-size: 0.7rem;
 }
@@ -999,7 +1015,7 @@ button {
 .service small {
     grid-column: 2;
 
-    color: #666;
+    color: #9a9a9a;
 
     font-size: 0.7rem;
 }
@@ -1029,14 +1045,11 @@ button {
 
 .timeline-item:last-child {
     border-bottom: 1px solid #292929;
-}
-
-.timeline-year {
+}.timeline-year {
     font-family: "DM Mono", monospace;
 
     font-size: 0.65rem;
-
-    color: #555;
+    color: #8a8a8a;
 }
 
 .timeline-content h3 {
@@ -1050,7 +1063,7 @@ button {
 .timeline-content p {
     max-width: 600px;
 
-    color: #777;
+    color: #9a9a9a;
 
     font-size: 0.85rem;
 
@@ -1092,7 +1105,7 @@ button {
 .beyond-number {
     font-family: "DM Mono", monospace;
 
-    color: #444;
+    color: #8a8a8a;
 
     font-size: 0.7rem;
 }
@@ -1117,7 +1130,7 @@ button {
 }
 
 .beyond-content > p:not(.section-label) {
-    color: #777;
+    color: #9a9a9a;
 
     max-width: 550px;
 
@@ -1229,7 +1242,7 @@ button {
 
     font-size: 0.65rem;
 
-    color: #777;
+    color: #9a9a9a;
 
     display: flex;
 
@@ -1266,7 +1279,7 @@ footer {
 
     font-size: 0.6rem;
 
-    color: #555;
+    color: #8a8a8a;
 }
 
 .footer-logo {
@@ -1290,9 +1303,13 @@ footer p:last-child {
 
 /* =========================================================
    SCROLL REVEAL
+
+   Scoped to .js (set by an inline script in the document head) so
+   that the content is never left invisible when JavaScript is
+   unavailable or the script fails to load.
 ========================================================= */
 
-.reveal {
+.js .reveal {
     opacity: 0;
 
     transform: translateY(25px);
@@ -1302,7 +1319,7 @@ footer p:last-child {
         transform 0.8s ease;
 }
 
-.reveal.visible {
+.js .reveal.visible {
     opacity: 1;
 
     transform: translateY(0);
@@ -2053,9 +2070,26 @@ footer p:last-child {
         transition-duration: 0.01ms !important;
     }
 
-    .reveal {
-        opacity: 1;
-        transform: none;
+    /* Continuous decorative loops are stopped outright rather than
+       being snapped to their final frame. */
+    .orbit,
+    .status-dot,
+    .marquee-track {
+        animation: none !important;
+    }
+
+    /* Reveal transitions are dropped, but the content still has to be
+       visible - including before the IntersectionObserver has run. */
+    .js .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* These two are driven by inline styles from script.js, which would
+       otherwise outrank any stylesheet rule, so they need !important. */
+    .profile-wrapper,
+    .hero-title {
+        transform: none !important;
     }
 
 }
